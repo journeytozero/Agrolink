@@ -1,69 +1,142 @@
-<<<<<<< HEAD
-# Agrolink-M
-=======
-# AgroLink – Farmer to Buyer Platform
+# Agrolink – Fullstack Laravel + React Application
 
-**AgroLink** is a smart digital marketplace that connects **farmers directly with buyers**, ensuring fair prices, transparency, and increased income for farmers.  
-Our mission is simple — *empower farmers through technology.*
+Agrolink is a full-stack web application designed for managing agriculture-related data.
+It uses Laravel to build a robust backend API and React to deliver a modern, responsive frontend single-page application (SPA).
 
 ---
 
-## Overview
+## Features
 
-AgroLink is a digital bridge between farmers and buyers, designed to eliminate middlemen, reduce post-harvest losses, and ensure every farmer gets a fair return for their hard work.  
-It provides a safe, smart, and sustainable way to sell agricultural produce directly to markets.
-
----
-
-## Mission
-
-> “To increase farmers’ income through technology and fair market access, ensuring every farmer gets the value they deserve.”
-
----
-
-## Vision
-
-> “To build a smart agricultural ecosystem where every farmer becomes independent, profitable, and empowered through digital innovation.”
+- Modern agriculture data management system  
+- Authentication and role-based access  
+- RESTful Laravel API  
+- React Single Page Application  
+- Smooth API communication using Axios  
+- Clean and responsive UI  
+- MySQL database support  
 
 ---
 
-## Key Features
+## Project Structure
 
-- Direct Farmer–Buyer Connection – No middlemen; direct trading for fair value.  
-- Secure Payment System – Escrow-based payments ensuring safe transactions.  
-- Smart Logistics – Pickup, delivery, and quality assurance management.  
-- Market Insights – Real-time data on prices, demand, and trends.  
-- Verified Profiles – Farmers and buyers both verified for trust & transparency.  
-- Easy Mobile Access – Multilingual, farmer-friendly interface.  
-- Sustainable Agriculture – Encourages local, eco-friendly farming practices.
-
----
-
-## Tech Stack
-
-| Category | Tools / Frameworks |
-|-----------|--------------------|
-| **Frontend** | React / Next.js, Bootstrap CSS |
-| **Backend** | Laravel |
-| **Database** | MySQL |
-| **AI Module (Optional)** | TensorFlow.js for crop image analysis |
-| **Payment Integration** | SSLCommerz / Stripe |
-| **Cloud Hosting** | Vercel / AWS / Firebase Hosting |
+```
+Agrolink/
+│
+├── agrolink-backend/    # Laravel Backend (API)
+│   ├── app/
+│   ├── routes/
+│   ├── database/
+│   └── vendor/ (ignored)
+│
+└── agrolink-frontend/   # React Frontend
+    ├── src/
+    ├── public/
+    └── node_modules/ (ignored)
+```
 
 ---
 
-## Installation & Setup
+## Technologies Used
+
+| Layer     | Technology                         |
+|-----------|-------------------------------------|
+| Frontend  | React, JSX, Vite/CRA, Axios         |
+| Backend   | Laravel 10+, PHP 8+                 |
+| Database  | MySQL / MariaDB                     |
+| Server    | Apache (XAMPP), PHP                 |
+| Tools     | Git, GitHub, Composer, NPM          |
+
+---
+
+## Backend Setup (Laravel)
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/agrolink.git
+cd agrolink-backend
 
-# Navigate into the folder
-cd agrolink
+composer install
+cp .env.example .env
+php artisan key:generate
 
-# Install dependencies
+# Database migrate
+php artisan migrate
+
+# Local development server
+php artisan serve
+```
+
+---
+
+## Frontend Setup (React)
+
+```bash
+cd agrolink-frontend
+
 npm install
-
-# Start the development server
 npm run dev
->>>>>>> 1849a561715d7399af82fcc47d865dd0b65e7f49
+```
+
+---
+
+## API Endpoint Structure (Example)
+
+| Method | Endpoint              | Description            |
+|--------|------------------------|------------------------|
+| GET    | /api/products         | List all products      |
+| POST   | /api/products         | Create new product     |
+| PUT    | /api/products/{id}    | Update product         |
+| DELETE | /api/products/{id}    | Delete product         |
+
+---
+
+## Environment Variables
+
+### Laravel
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=agrolink_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### React
+```
+VITE_API_BASE_URL=http://localhost:8000/api
+```
+
+---
+
+## Available Scripts
+
+### Backend
+```
+php artisan serve
+php artisan migrate
+php artisan tinker
+```
+
+### Frontend
+```
+npm run dev
+npm run build
+npm run preview
+```
+
+---
+
+## Production Build (React)
+
+```bash
+cd agrolink-frontend
+npm run build
+```
+
+The production build will be located in the `dist/` directory.
+
+---
+
+## Author
+
+Journey To Zero  
+GitHub: https://github.com/journeytozero
